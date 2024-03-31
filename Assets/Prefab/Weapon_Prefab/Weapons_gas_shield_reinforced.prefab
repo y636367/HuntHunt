@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1572739969351214899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6257615219075211284}
+  - component: {fileID: 5592550925414922385}
+  m_Layer: 11
+  m_Name: Weapons_gas_shield_reinforced
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6257615219075211284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572739969351214899}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5592550925414922385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572739969351214899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6eb6d3468e61a469316142df38fac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 7
+  prefabId: 10
+  damage: 1.2
+  count: 1
+  speed: 1.8
+  UP_damage: 1.2
+  UP_count: 1
+  UP_speed: 0.3
+  maxLv: 6
+  current_Lv: 0
+  Bullet_pool: {fileID: 0}
+  alive: 1
+  bullet_speed: 0
+  Cool_time: 0.05
+  Life_Time: 0.005
+  persistent: 0
+  Manual_shot: 0
+  Auto_shot: 0
+  Random_shot: 0
+  Nomal_shot: 0
+  Throw_shot: 0
+  Bury_mine: 0
+  Sword_slash: 0
+  axe: {fileID: 0}
+  shield: {fileID: 0}
+  Auto_Gun: {fileID: 0}
+  per: -1
+  Manual_Gun: {fileID: 0}
+  Random_Gun: {fileID: 0}
+  Throw_item: {fileID: 0}
+  Mine_item: {fileID: 0}
+  Fire_item: {fileID: 0}
+  Sword_item: {fileID: 0}
+  Additional: 0.2
+  UP_Additional: 0.08
+  player: {fileID: 0}
+  Weapon_num: 0

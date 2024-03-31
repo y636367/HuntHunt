@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ff4e9712a5df14482baae1b3dfefcd, type: 3}
+  m_Name: Item_ 11
+  m_EditorClassIdentifier: 
+  Type: 2
+  ItemId: 4
+  ItemName: "\uC5F0\uB9C9\uD0C4"
+  ItemIcon: {fileID: 21300000, guid: 598ba60a9a654bf4cab3e4593b1bc98f, type: 3}
+  Weapon: 1
+  ItemDesc: "\uACF5\uACA9\uB825 {0}(+{1})\n\uBAAC\uC2A4\uD130 \uC18D\uB3C4 \uAC10\uC18C
+    {2}\n\uCFE8\uD0C0\uC784 {3}(-{4})"
+  baseDamage: 0.5
+  baseCount: 0.5
+  base_Cool_time: 5
+  damages:
+  - 0.5
+  - 0.55
+  - 0.6
+  - 0.65
+  - 0.7
+  - 0.75
+  counts:
+  - 0.5
+  - 0.55
+  - 0.6
+  - 0.65
+  - 0.7
+  - 0.75
+  Cool_time:
+  - 5
+  - 4.6
+  - 4.2
+  - 3.8
+  - 3.4
+  - 3
+  Weapon_num: 10
+  Check: 0
+  ReinforcedMode: {fileID: 0}

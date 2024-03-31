@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c02863dab7f6b248b880fd655b10afc, type: 3}
+  m_Name: Move_Speed
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: bcef3bb3e863a0b47bc29230664c187c, type: 3}
+  Level: 1
+  Name: "\uC774\uB3D9\uC18D\uB3C4 \uC0C1\uC2B9"
+  S_type: 4
+  data: {fileID: 11400000, guid: 4b696d3178ea5d24bb9ce6ab33d32bba, type: 2}
+  Desc: "\uADF8\uAC74 \uC794\uC0C1\uC774\uB77C\uB124"
+  Upgrade_status: 0.005
+  Upgrade_Cost: 10
+  Plus_Cost: 5
+  Default_UP_cost: 10

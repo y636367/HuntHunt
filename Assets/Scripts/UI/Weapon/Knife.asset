@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42a0816da98b964cac55550fac4ff5d, type: 3}
+  m_Name: Knife
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: f35e99bb980c3e44ab29af895b9bfc64, type: 3}
+  Name: "\uB300\uAC80"
+  Level: 1
+  W_type: 9
+  data: {fileID: 11400000, guid: fd032742b803ec443b68a1460048876e, type: 2}
+  Desc: "\uC289...\uC288\uC288\uC289..."
+  Max_Level: 0
+  Upgrade_Cost: 800
+  Plus_Cost: 400
+  Numbering: 18
