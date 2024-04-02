@@ -20585,7 +20585,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7367441634594069108, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
   m_PrefabInstance: {fileID: 8896591130976636354}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8896591130976636355}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ab0619dfb9aa844e926587837e78f32, type: 3}
@@ -36118,18 +36118,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 896437762522575252, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068705626439454642, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477277093012551586, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8292161142429834463, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -36173,32 +36161,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 896437762522575252, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8896591130976636356}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
---- !u!1 &8896591130976636355 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 896437762522575252, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
-  m_PrefabInstance: {fileID: 8896591130976636354}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &8896591130976636356
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8896591130976636355}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.15, y: 0.694722, z: 0.15}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.6226982, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

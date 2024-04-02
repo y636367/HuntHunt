@@ -155,6 +155,7 @@ public class Spawner : MonoBehaviour
             enemy.GetComponent<Slime>().monster_num = num;
             enemy.GetComponent<Slime>().Boss_Skill = false;                                                     // Boss Skill로 생성됬는지에 대한 판단 변수
             enemy.GetComponent<Slime>().Init(spawnData[status]);                                                // 몬스터 Status 초기화
+            enemy.GetComponent<Slime>().default_speed = enemy.GetComponent<Slime>().speed;
             Count++;
         }
     }
@@ -286,7 +287,8 @@ public class Spawner : MonoBehaviour
         GameObject enemy = GameManager.Instance.pool.Middle_Get(Random.Range(0, 10));                                       // Boss Spawn 포인트 중 랜덤 한 곳 설정
         enemy.transform.position = BossPoint[Random.Range(1, BossPoint.Length)].position;
         enemy.GetComponent<Monster>().Init(MIddleBoss_Data[status]);                                                        // Status 및 설정 초기화
-        enemy.GetComponent<Monster>().Upgrade_Multiple(Middle_Spawn_Count);                                                        // 생존 시간에 의해 Status 곱 계산
+        enemy.GetComponent<Monster>().default_speed = enemy.GetComponent<Monster>().speed;
+        enemy.GetComponent<Monster>().Upgrade_Multiple(Middle_Spawn_Count);                                                 // 생존 시간에 의해 Status 곱 계산
 
         Middle_Spawn_Count++;
     }
@@ -302,6 +304,7 @@ public class Spawner : MonoBehaviour
         GameObject enemy = GameManager.Instance.pool.Final_Get(Random.Range(0, 10));                                        // Boss Spawn 포인트 중 랜덤 한 곳 설정
         enemy.transform.position = BossPoint[Random.Range(1, BossPoint.Length)].position;                                   
         enemy.GetComponent<Monster>().Init(Boss_Data[status]);                                                              // Status 및 설정 초기화
+        enemy.GetComponent<Monster>().default_speed = enemy.GetComponent<Monster>().speed;
         enemy.GetComponent<Monster>().Boss_Skill = false;                                                                   // Skill 상태 False
         enemy.GetComponent<Monster>().Upgrade_Multiple(Boss_Spawn_Count);                                                   // 생존 시간에 의해 Status 곱 계산
 
@@ -400,7 +403,7 @@ public class SpawnData
     /// <returns></returns>
     public float Time_Upgrade(float t_data)
     {
-        return t_data + 0.015f;
+        return t_data * 1.2f;
     }
     /// <summary>
     /// Player가 생존한 시간에 비례하여 일부 Status 곱 계산(중간 보스)

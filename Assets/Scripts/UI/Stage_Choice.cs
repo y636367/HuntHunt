@@ -228,11 +228,11 @@ public class Stage_Choice : MonoBehaviour
                 Diffcult_num = 0;
                 break;
             case 1: // 난이도 2
-                D_TIme_text.text = "Time\n15:00";
+                D_TIme_text.text = "Time\n16:00";
                 Diffcult_num = 1;
                 break;
             case 2: // 난이도 3
-                D_TIme_text.text = "Time\n30:00";
+                D_TIme_text.text = "Time\n32:00";
                 Diffcult_num = 2;
                 break;
             case 3: // 난이도 무한

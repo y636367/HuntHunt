@@ -17,10 +17,10 @@ public class StageManager : MonoBehaviour
                 GameManager.Instance.MaxGameTime = 10f * 60f;
                 break;
             case 1:
-                GameManager.Instance.MaxGameTime = 15f * 60f;
+                GameManager.Instance.MaxGameTime = 16f * 60f;
                 break;
             case 2:
-                GameManager.Instance.MaxGameTime = 30f * 60f;
+                GameManager.Instance.MaxGameTime = 32f * 60f;
                 break;
             default:
                 GameManager.Instance.MaxGameTime = -1;

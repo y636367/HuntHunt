@@ -51,7 +51,7 @@ public class Slime : MonoBehaviour
     private float Slower_Timer = 0f;
     private float Shield_Timer = 0f;
     private float s_speed;
-    private float default_speed;
+    public float default_speed;
 
     private bool Slow;
     private bool Stun;
@@ -201,18 +201,16 @@ public class Slime : MonoBehaviour
         Attack_power = t_data.Attack;
 
         MaxHealth = GameManager.Instance.spawnData.Stage_Multiple(MaxHealth);                                                   // Stage에 따른 능력치 곱
-        Physical_strength = MaxHealth;
-        Defensive_power = GameManager.Instance.spawnData.Stage_Multiple(Defensive_power);
         Attack_power = GameManager.Instance.spawnData.Stage_Multiple(Attack_power);
 
         if (GameManager.Instance.Upgrade_Count != 0)
         {
             for (int index = 0; index < GameManager.Instance.Upgrade_Count; index++)
             {
-                Defensive_power=GameManager.Instance.spawnData.Time_Upgrade(Defensive_power);
-                Attack_power=GameManager.Instance.spawnData.Time_Upgrade(Attack_power);
+                MaxHealth = GameManager.Instance.spawnData.Time_Upgrade(MaxHealth);
             }
         }
+        Physical_strength = MaxHealth;
     }
     private void OnTriggerEnter(Collider other)
     {

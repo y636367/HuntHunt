@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 2076764787355897689}
   - component: {fileID: 9031936829066064564}
   - component: {fileID: 2929922709282408052}
-  - component: {fileID: 4651824582128632017}
+  - component: {fileID: 5617973981776909015}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -415,6 +415,8 @@ MonoBehaviour:
   Attack_power: 1
   Defensive_power: 0.1
   Attack_speed: 0.1
+  t_Attack_power: 0
+  t_Attack_speed: 0
   current_hp: 0
   Recovery: 0
   Recovery_Status: 0
@@ -425,6 +427,7 @@ MonoBehaviour:
   Dead_s: Player_Dead
   state: 0
   Changing_Speed: 5
+  Test: 0
 --- !u!54 &2076764787355897689
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -493,7 +496,7 @@ MonoBehaviour:
     m_Bits: 1024
   targets: []
   nearestTarget: {fileID: 0}
---- !u!208 &4651824582128632017
+--- !u!208 &5617973981776909015
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -562,66 +565,66 @@ MonoBehaviour:
   spawnData:
   - Attack: 0
     Health: 5
-    Defensive: 0.1
+    Defensive: 0.03
   - Attack: 0
     Health: 12
-    Defensive: 0.3
+    Defensive: 0.06
   - Attack: 0
     Health: 20
-    Defensive: 0.5
+    Defensive: 0.09
   - Attack: 0
     Health: 30
-    Defensive: 0.8
-  - Attack: 0
-    Health: 12
     Defensive: 0.15
   - Attack: 0
+    Health: 12
+    Defensive: 0.07
+  - Attack: 0
     Health: 20
-    Defensive: 0.4
+    Defensive: 0.14
   - Attack: 0
     Health: 30
-    Defensive: 0.65
+    Defensive: 0.21
   - Attack: 0
     Health: 42
-    Defensive: 1.2
+    Defensive: 0.35
   - Attack: 0
     Health: 20
+    Defensive: 0.15
+  - Attack: 0
+    Health: 30
     Defensive: 0.3
   - Attack: 0
-    Health: 30
-    Defensive: 0.8
-  - Attack: 0
     Health: 42
-    Defensive: 1.3
+    Defensive: 0.45
   - Attack: 0
     Health: 56
-    Defensive: 1.8
+    Defensive: 0.75
   MIddleBoss_Data:
   - Attack: 0
     Health: 50
-    Defensive: 0.5
+    Defensive: 0.4
   - Attack: 0
     Health: 100
-    Defensive: 0.8
+    Defensive: 0.55
   - Attack: 0
     Health: 150
-    Defensive: 1.1
+    Defensive: 0.7
   - Attack: 0
     Health: 200
-    Defensive: 1.4
+    Defensive: 0.95
   Boss_Data:
   - Attack: 0
     Health: 200
-    Defensive: 1
+    Defensive: 0.55
   - Attack: 0
     Health: 350
-    Defensive: 1.8
+    Defensive: 0.75
   - Attack: 0
     Health: 500
-    Defensive: 2.6
+    Defensive: 0.95
   - Attack: 0
     Health: 700
-    Defensive: 3.4
+    Defensive: 0.99
   First: 6
   Scond: 5.5
   Third: 5

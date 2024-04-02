@@ -63,7 +63,7 @@ public class Monster : MonoBehaviour
     private float Slower_Timer = 0f;
     private float Shield_Timer = 0f;
     private float s_speed;
-    private float default_speed;
+    public float default_speed;
 
     private bool Slow;
     private bool Stun;
@@ -296,9 +296,17 @@ public class Monster : MonoBehaviour
         Attack_power = t_data.Attack;
 
         MaxHealth = GameManager.Instance.spawnData.Stage_Multiple(MaxHealth);                                                           // 현재 Stage에 따른 곱의 값 반영
-        Physical_strength = MaxHealth;
-        Defensive_power = GameManager.Instance.spawnData.Stage_Multiple(Defensive_power);
         Attack_power = GameManager.Instance.spawnData.Stage_Multiple(Attack_power);
+
+        if (GameManager.Instance.Upgrade_Count != 0)
+        {
+            for (int index = 0; index < GameManager.Instance.Upgrade_Count; index++)
+            {
+                MaxHealth = GameManager.Instance.spawnData.Time_Upgrade(MaxHealth);
+            }
+        }
+
+        Physical_strength = MaxHealth;
     }
     /// <summary>
     /// Player가 생존한 시간에 비례한 난이도 조절을 위한 Boss 일부 Status 상향 함수
