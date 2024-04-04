@@ -188,45 +188,45 @@ public class Item : MonoBehaviour
                 {
                     if (Current_Time <= 3.0f * 60f)
                     {
-                        Value = 10;
+                        Value = 1;
                     }
                     else if (Current_Time <= 6.0f * 60f)
                     {
-                        Value = 20;
+                        Value = 3;
                     }
                     else
                     {
-                        Value = 30;
+                        Value = 7;
                     }
                 }
                 else if (Current_Difficult == 1)
                 {
                     if (Current_Time <= 3.0f * 60f)
                     {
-                        Value = 15;
+                        Value = 7;
                     }
                     else if (Current_Time <= 6.0f * 60f)
                     {
-                        Value = 25;
+                        Value = 11;
                     }
                     else
                     {
-                        Value = 35;
+                        Value = 17;
                     }
                 }
                 else if (Current_Difficult == 2)
                 {
                     if (Current_Time <= 6.0f * 60f)
                     {
-                        Value = 20;
+                        Value = 17;
                     }
                     else if (Current_Time <= 15.0f * 60f)
                     {
-                        Value = 30;
+                        Value = 25;
                     }
                     else
                     {
-                        Value = 40;
+                        Value = 35;
                     }
                 }
                 else

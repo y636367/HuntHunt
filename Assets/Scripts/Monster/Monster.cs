@@ -288,7 +288,7 @@ public class Monster : MonoBehaviour
     /// 초기화(단계 및 생존한 시간 등 고려 난이도를 위한 Status 초기화)
     /// </summary>
     /// <param name="t_data"></param>
-    public void Init(SpawnData t_data)
+    public void Init(SpawnData t_data, int t_count)
     {
         MaxHealth = t_data.Health;
         Physical_strength = t_data.Health;
@@ -296,15 +296,10 @@ public class Monster : MonoBehaviour
         Attack_power = t_data.Attack;
 
         MaxHealth = GameManager.Instance.spawnData.Stage_Multiple(MaxHealth);                                                           // 현재 Stage에 따른 곱의 값 반영
+        Defensive_power = GameManager.Instance.spawnData.Stage_Multiple(Defensive_power);
         Attack_power = GameManager.Instance.spawnData.Stage_Multiple(Attack_power);
 
-        if (GameManager.Instance.Upgrade_Count != 0)
-        {
-            for (int index = 0; index < GameManager.Instance.Upgrade_Count; index++)
-            {
-                MaxHealth = GameManager.Instance.spawnData.Time_Upgrade(MaxHealth);
-            }
-        }
+        Upgrade_Multiple(t_count);
 
         Physical_strength = MaxHealth;
     }
@@ -316,8 +311,8 @@ public class Monster : MonoBehaviour
     {
         for (int index = 0; index < t_count; index++)
         {
-            Defensive_power = GameManager.Instance.spawnData.Time_Middle_Upgrade(Defensive_power);
-            Attack_power = GameManager.Instance.spawnData.Time_Middle_Upgrade(Attack_power);
+            Defensive_power = GameManager.Instance.spawnData.Time_Boss_Upgrade(Defensive_power);
+            Attack_power = GameManager.Instance.spawnData.Time_Boss_Upgrade(Attack_power);
         }
     }
     /// <summary>
@@ -352,13 +347,13 @@ public class Monster : MonoBehaviour
             {
                 try
                 {
-                    Physical_strength -= other.GetComponent<Bullet>().Damage * (1 - Defensive_power);                       // 총알
+                    Physical_strength -= other.GetComponent<Bullet>().Damage * (1 / (1 + Defensive_power));                       // 총알
                     Hit_Damage();
                 }
                 catch (NullReferenceException) { }
                 try
                 {
-                    Physical_strength -= other.GetComponent<Bomb>().Damage * (1 - Defensive_power);                         // 폭탄
+                    Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));                         // 폭탄
                     Hit_Damage();
                 }
                 catch (NullReferenceException) { }
@@ -395,7 +390,7 @@ public class Monster : MonoBehaviour
                 {
                     if (Physical_strength > 0)
                     {
-                        Physical_strength -= other.GetComponent<Bomb>().Damage * (1 - Defensive_power);
+                        Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));
                         Slower_Timer = 0f;
                     }
                     else
@@ -423,7 +418,7 @@ public class Monster : MonoBehaviour
                 {
                     if (Physical_strength > 0)
                     {
-                        Physical_strength -= other.GetComponent<Bullet>().Damage * (1 - Defensive_power);
+                        Physical_strength -= other.GetComponent<Bullet>().Damage * (1 / (1 + Defensive_power));
                         StartCoroutine(OnDamage());
                         Shield_Timer = 0f;
                         Check_Health();
@@ -458,13 +453,13 @@ public class Monster : MonoBehaviour
 
             try
             {
-                Physical_strength -= other.GetComponent<Bullet>().Damage * (1 - Defensive_power);
+                Physical_strength -= other.GetComponent<Bullet>().Damage * (1 / (1 + Defensive_power));
                 Hit_Damage();
             }
             catch (NullReferenceException) { }
             try
             {
-                Physical_strength -= other.GetComponent<Bomb>().Damage * (1 - Defensive_power);
+                Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));
                 Hit_Damage();
             }
             catch (NullReferenceException) { }

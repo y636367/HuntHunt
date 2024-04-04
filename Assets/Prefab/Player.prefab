@@ -427,7 +427,6 @@ MonoBehaviour:
   Dead_s: Player_Dead
   state: 0
   Changing_Speed: 5
-  Test: 0
 --- !u!54 &2076764787355897689
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -565,66 +564,66 @@ MonoBehaviour:
   spawnData:
   - Attack: 0
     Health: 5
-    Defensive: 0.03
+    Defensive: 0.1
   - Attack: 0
     Health: 12
-    Defensive: 0.06
+    Defensive: 0.15
   - Attack: 0
     Health: 20
-    Defensive: 0.09
+    Defensive: 0.2
   - Attack: 0
     Health: 30
-    Defensive: 0.15
+    Defensive: 0.25
   - Attack: 0
     Health: 12
-    Defensive: 0.07
-  - Attack: 0
-    Health: 20
-    Defensive: 0.14
-  - Attack: 0
-    Health: 30
-    Defensive: 0.21
-  - Attack: 0
-    Health: 42
-    Defensive: 0.35
-  - Attack: 0
-    Health: 20
     Defensive: 0.15
   - Attack: 0
+    Health: 20
+    Defensive: 0.23
+  - Attack: 0
     Health: 30
-    Defensive: 0.3
+    Defensive: 0.31
   - Attack: 0
     Health: 42
-    Defensive: 0.45
+    Defensive: 0.39
+  - Attack: 0
+    Health: 20
+    Defensive: 0.2
+  - Attack: 0
+    Health: 30
+    Defensive: 0.31
+  - Attack: 0
+    Health: 42
+    Defensive: 0.42
   - Attack: 0
     Health: 56
-    Defensive: 0.75
+    Defensive: 0.53
   MIddleBoss_Data:
   - Attack: 0
     Health: 50
-    Defensive: 0.4
+    Defensive: 0.5
   - Attack: 0
     Health: 100
-    Defensive: 0.55
+    Defensive: 0.65
   - Attack: 0
     Health: 150
-    Defensive: 0.7
+    Defensive: 0.8
   - Attack: 0
     Health: 200
     Defensive: 0.95
   Boss_Data:
   - Attack: 0
     Health: 200
-    Defensive: 0.55
-  - Attack: 0
-    Health: 350
     Defensive: 0.75
   - Attack: 0
-    Health: 500
+    Health: 350
     Defensive: 0.95
   - Attack: 0
+    Health: 500
+    Defensive: 1.15
+  - Attack: 0
     Health: 700
-    Defensive: 0.99
+    Defensive: 1.35
   First: 6
   Scond: 5.5
   Third: 5

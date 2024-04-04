@@ -201,6 +201,7 @@ public class Slime : MonoBehaviour
         Attack_power = t_data.Attack;
 
         MaxHealth = GameManager.Instance.spawnData.Stage_Multiple(MaxHealth);                                                   // Stage에 따른 능력치 곱
+        Defensive_power = GameManager.Instance.spawnData.Stage_Multiple(Defensive_power);
         Attack_power = GameManager.Instance.spawnData.Stage_Multiple(Attack_power);
 
         if (GameManager.Instance.Upgrade_Count != 0)
@@ -208,6 +209,7 @@ public class Slime : MonoBehaviour
             for (int index = 0; index < GameManager.Instance.Upgrade_Count; index++)
             {
                 MaxHealth = GameManager.Instance.spawnData.Time_Upgrade(MaxHealth);
+                Defensive_power = GameManager.Instance.spawnData.Time_Upgrade(Defensive_power);
             }
         }
         Physical_strength = MaxHealth;
@@ -225,13 +227,13 @@ public class Slime : MonoBehaviour
         {
             try
             {
-                Physical_strength -= other.GetComponent<Bullet>().Damage * (1 - Defensive_power);                                   // Bullet 타입 피격
+                Physical_strength -= other.GetComponent<Bullet>().Damage * (1 / (1 + Defensive_power));                             // Bullet 타입 피격
                 Hit_Damage();
             }
             catch (NullReferenceException) { }
             try
             {
-                Physical_strength -= other.GetComponent<Bomb>().Damage * (1 - Defensive_power);                                     // Bomb 타입 피격
+                Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));                               // Bomb 타입 피격
                 StartCoroutine(OnDamage());
             }
             catch (NullReferenceException) { }
@@ -261,7 +263,7 @@ public class Slime : MonoBehaviour
             {
                 if (Physical_strength > 0)
                 {
-                    Physical_strength -= other.GetComponent<Bomb>().Damage * (1 - Defensive_power);                     // 데미지 존재시 체력 감소
+                    Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));               // 데미지 존재시 체력 감소
                     Slower_Timer = 0f;
                 }
                 else
@@ -290,7 +292,7 @@ public class Slime : MonoBehaviour
             {
                 if (Physical_strength > 0)
                 {
-                    Physical_strength -= other.GetComponent<Bullet>().Damage * (1 - Defensive_power);
+                    Physical_strength -= other.GetComponent<Bullet>().Damage * (1 / (1 + Defensive_power));
                     StartCoroutine(OnDamage());
                     Shield_Timer = 0f;
                 }
@@ -317,13 +319,13 @@ public class Slime : MonoBehaviour
 
         try
         {
-            Physical_strength -= other.GetComponent<Bullet>().Damage * (1 - Defensive_power);
+            Physical_strength -= other.GetComponent<Bullet>().Damage * (1 / (1 + Defensive_power));
             StartCoroutine(OnDamage());
         }
         catch (NullReferenceException) { }
         try
         {
-            Physical_strength -= other.GetComponent<Bomb>().Damage * (1 - Defensive_power);
+            Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));
             StartCoroutine(OnDamage());
         }
         catch (NullReferenceException) { }

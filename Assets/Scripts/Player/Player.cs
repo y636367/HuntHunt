@@ -188,7 +188,7 @@ public class Player : MonoBehaviour
             if (!hit)
             {
                 hit = true;
-                current_hp -= MaxH * (1 - Defensive_power);                                                                             // 체력 감소
+                current_hp -= MaxH * (1 / (1 + Defensive_power));                                                                       // 체력 감소
                 StartCoroutine(OnDamage());                                                                                             // 피격효과 실행
             }
             if (current_hp > 0)

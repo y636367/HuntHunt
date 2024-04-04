@@ -206,6 +206,7 @@ public class GameManager : MonoBehaviour
                 Start_ = false; // 클리어 하였기에 모두 일시 정지
                 Reset_Temp_DataUPdate();
                 Clear = true;
+                Backend_GameData.Instance.Cleardatas.High_Stage = PD_Control.Instance.StageManager_.Stage_num;        // 스테이지 클리어 정보 반영
                 Backend_GameData.Instance.Userdatas.Coin += current_Coin;
                 Score_Calculation();
                 uimanager.Score_Panel_on();

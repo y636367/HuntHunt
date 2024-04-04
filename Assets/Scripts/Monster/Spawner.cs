@@ -172,11 +172,11 @@ public class Spawner : MonoBehaviour
 
         if (Current_Difficult == 0 || Current_Difficult == 1)
         {
-            if (Current_Time <= 3.0f * 60f)
+            if (Current_Time < 3.0f * 60f)
             {
                 t_num = 0;                                                                              // 1 단계
             }
-            else if (Current_Time <= 6.0f * 60f)
+            else if (Current_Time < 6.0f * 60f)
             {
                 t_num = 4;                                                                              // 2 단계
             }
@@ -187,11 +187,11 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-            if (Current_Time <= 6.0f * 60f)
+            if (Current_Time < 6.0f * 60f)
             {
                 t_num = 0;
             }
-            else if (Current_Time <= 15.0f * 60f)
+            else if (Current_Time < 15.0f * 60f)
             {
                 t_num = 4;
             }
@@ -215,11 +215,11 @@ public class Spawner : MonoBehaviour
 
         if (Current_Difficult == 0)                                                                 // 난이도 1
         {
-            if (Current_Time <= 3.0f * 60f)                                                         // 생존 시간에 따른 Status 설정
+            if (Current_Time < 3.0f * 60f)                                                         // 생존 시간에 따른 Status 설정
             {
                 t_status = 0;
             }
-            else if (Current_Time <= 6.0f * 60f)
+            else if (Current_Time < 6.0f * 60f)
             {
                 t_status = 4;
             }
@@ -230,11 +230,11 @@ public class Spawner : MonoBehaviour
         }
         else if(Current_Difficult == 1)                                                             // 난이도 2
         {
-            if (Current_Time <= 3.0f * 60f)
+            if (Current_Time < 3.0f * 60f)
             {
                 t_status = 1;
             }
-            else if (Current_Time <= 6.0f * 60f)
+            else if (Current_Time < 6.0f * 60f)
             {
                 t_status = 5;
             }
@@ -245,11 +245,11 @@ public class Spawner : MonoBehaviour
         }
         else if(Current_Difficult == 2)                                                             // 난이도 3
         {
-            if (Current_Time <= 6.0f * 60f)
+            if (Current_Time < 6.0f * 60f)
             {
                 t_status = 2;
             }
-            else if (Current_Time <= 15.0f * 60f)
+            else if (Current_Time < 15.0f * 60f)
             {
                 t_status = 6;
             }
@@ -260,11 +260,11 @@ public class Spawner : MonoBehaviour
         }
         else                                                                                        // 난이도 무제한
         {
-            if (Current_Time <= 6.0f * 60f)
+            if (Current_Time < 6.0f * 60f)
             {
                 t_status = 3;
             }
-            else if (Current_Time <= 15.0f * 60f)
+            else if (Current_Time < 15.0f * 60f)
             {
                 t_status = 7;
             }
@@ -286,9 +286,8 @@ public class Spawner : MonoBehaviour
 
         GameObject enemy = GameManager.Instance.pool.Middle_Get(Random.Range(0, 10));                                       // Boss Spawn 포인트 중 랜덤 한 곳 설정
         enemy.transform.position = BossPoint[Random.Range(1, BossPoint.Length)].position;
-        enemy.GetComponent<Monster>().Init(MIddleBoss_Data[status]);                                                        // Status 및 설정 초기화
+        enemy.GetComponent<Monster>().Init(MIddleBoss_Data[status], Middle_Spawn_Count);                                    // Status 및 설정 초기화
         enemy.GetComponent<Monster>().default_speed = enemy.GetComponent<Monster>().speed;
-        enemy.GetComponent<Monster>().Upgrade_Multiple(Middle_Spawn_Count);                                                 // 생존 시간에 의해 Status 곱 계산
 
         Middle_Spawn_Count++;
     }
@@ -302,11 +301,10 @@ public class Spawner : MonoBehaviour
         Boss_Status(status);                                                                                                // Boss Spawn 특성 설정
 
         GameObject enemy = GameManager.Instance.pool.Final_Get(Random.Range(0, 10));                                        // Boss Spawn 포인트 중 랜덤 한 곳 설정
-        enemy.transform.position = BossPoint[Random.Range(1, BossPoint.Length)].position;                                   
-        enemy.GetComponent<Monster>().Init(Boss_Data[status]);                                                              // Status 및 설정 초기화
+        enemy.transform.position = BossPoint[Random.Range(1, BossPoint.Length)].position;
+        enemy.GetComponent<Monster>().Init(Boss_Data[status], Boss_Spawn_Count);                                            // Status 및 설정 초기화
         enemy.GetComponent<Monster>().default_speed = enemy.GetComponent<Monster>().speed;
         enemy.GetComponent<Monster>().Boss_Skill = false;                                                                   // Skill 상태 False
-        enemy.GetComponent<Monster>().Upgrade_Multiple(Boss_Spawn_Count);                                                   // 생존 시간에 의해 Status 곱 계산
 
         Boss_Spawn_Count++;
     }
@@ -381,7 +379,7 @@ public class SpawnData
     public float Defensive;
 
     /// <summary>
-    /// Stage의 넘버링에 따른 몬스터의 Status 곱 계산 함수
+    /// Stage의 넘버링에 따른 일반 몬스터의 Status 곱 계산 함수
     /// </summary>
     /// <param name="t_data"></param>
     /// <returns></returns>
@@ -403,16 +401,7 @@ public class SpawnData
     /// <returns></returns>
     public float Time_Upgrade(float t_data)
     {
-        return t_data * 1.2f;
-    }
-    /// <summary>
-    /// Player가 생존한 시간에 비례하여 일부 Status 곱 계산(중간 보스)
-    /// </summary>
-    /// <param name="t_data"></param>
-    /// <returns></returns>
-    public float Time_Middle_Upgrade(float t_data)
-    {
-        return t_data + 0.06f;
+        return t_data * 1.1f;
     }
     /// <summary>
     /// Player가 생존한 시간에 비례하여 일부 Status 곱 계산(보스)
@@ -421,7 +410,7 @@ public class SpawnData
     /// <returns></returns>
     public float Time_Boss_Upgrade(float t_data)
     {
-        return t_data + 1.0f;
+        return t_data * 1.2f;
     }
     /// <summary>
     /// Player의 생존시간에 비례하여 중간 보스 및 보스의 Status 곱 계산을 위한 변수 값 설정 함수
