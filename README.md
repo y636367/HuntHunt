@@ -20,7 +20,7 @@ apk link : https://drive.google.com/file/d/1P6OlReQEf70RX6uOcD4GpnShLfpWdD0l/vie
  ## 게임설명
   - ### 로그인 및 회원가입(아이디, 비밀번호 찾기)
     
-|<img src="https://github.com/y636367/HuntHunt/assets/63005842/36d55e0f-52b6-48d3-b510-e17bf8a701ce.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/3515f707-96cc-4da1-9daf-f89e3be945b1.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/e33b582f-0124-4386-9bfa-9fb3f3e10a93.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/8c2e9a63-6f1b-4c26-bd15-2000d3c88bc8.png" width="200" height="400"/>|
+|<img src="https://github.com/user-attachments/assets/16816502-49dd-4231-967c-17f4f62455a6" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/02470d46-7f9c-4dad-b6a6-a784b9b234ae" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/ffc58924-2807-40ab-8060-b7f936b8ecd4" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/50c11f70-1585-4820-99fe-f8b2ee793ca3" width="200" height="400"/>|
 |---|---|---|---|
 |<div align=center>로그인 화면</div>|<div align=center>회원가입 화면</div>|<div align=center>아이디 찾기</div>|<div align=center>비밀번호 찾기</div>|
 
@@ -33,7 +33,7 @@ apk link : https://drive.google.com/file/d/1P6OlReQEf70RX6uOcD4GpnShLfpWdD0l/vie
  - ### 인게임 화면
 스테이지
 
-|<img src="https://github.com/y636367/HuntHunt/assets/63005842/c5ff2d6f-05cc-45ed-bf82-70c61a60c798.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/feee8813-fbb7-4eaa-885b-ea190c499521.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/321aed1c-3a27-4ef1-9fb4-89bfe4c8eb7f.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/10bce5ae-28c9-40dc-b05a-4f33e7499fe5.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/8fff9b73-713e-435c-8d7f-b00b9a1ee9f2.png" width="200" height="400"/>|
+|<img src="https://github.com/user-attachments/assets/6803cd04-998c-419b-845b-5bbfc1c7b892" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/b011a9da-8b8f-4250-917a-b686cd9de788" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/747122db-c6c1-4fc6-b561-78cb898dc2cd" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/f4f3bb1e-1e31-45c0-91d9-8694eab4cc1f" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/728b1c7a-0ea3-4a89-a373-72fed64a92a7" width="200" height="400"/>|
 |---|---|---|---|---|
 |<div align=center>1 스테이지 - 🌲</div>|<div align=center>2 스테이지 - 🌑</div>|<div align=center>3 스테이지 - ⛺</div>|<div align=center>4 스테이지 - ✨</div>|<div align=center>5 스테이지 - 🛤️</div>|
 
@@ -43,7 +43,7 @@ apk link : https://drive.google.com/file/d/1P6OlReQEf70RX6uOcD4GpnShLfpWdD0l/vie
 <br>
 기타
 
-|<img src="https://github.com/y636367/HuntHunt/assets/63005842/73b0f89c-0513-4361-ace0-e8801d66c06c.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/17848683-8ae7-4f69-8c72-e263ca34cb6b.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/d216a4c0-cf03-4850-98d4-80d3af03f6f9.png" width="200" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/d4f6f4a9-fc7d-4751-aafe-7b518c217cd2.png" width="200" height="400"/>|
+|<img src="https://github.com/user-attachments/assets/1f5be579-af38-4ed2-9f8b-7d701e4a32ba" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/6ac3004e-4212-4465-b590-efbf49df2ea8" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/d477a04f-79f5-47ce-abe8-5e58c96396ca" width="200" height="400"/>|<img src="https://github.com/user-attachments/assets/8dcf0e5a-9514-4d03-9d34-faaeb20569a1" width="200" height="400"/>|
 |---|---|---|---|
 |<div align=center>인게임 레벨</div>|<div align=center>보물상자 획득</div>|<div align=center>현재 진행 상황 확인</div>|<div align=center>게임 오버 시 스코어</div>|
 
@@ -57,7 +57,7 @@ apk link : https://drive.google.com/file/d/1P6OlReQEf70RX6uOcD4GpnShLfpWdD0l/vie
 <br>
 몬스터
 
-|<img src="https://github.com/y636367/HuntHunt/assets/63005842/4eae4183-eec6-4277-8910-4a1584a5d585.png" width="200" height="400"/>|
+|<img src="https://github.com/user-attachments/assets/c0a9910d-718f-4bf2-b336-c89087958a35" width="200" height="400"/>|
 |---|
 |<div align=center>보스 등장</div>|
 
@@ -67,7 +67,7 @@ apk link : https://drive.google.com/file/d/1P6OlReQEf70RX6uOcD4GpnShLfpWdD0l/vie
 <br>
 히든 보스
 
-|<img src="https://github.com/y636367/HuntHunt/assets/63005842/7221a2eb-f4ae-4438-9394-f68e5cd4624c.png" width="250" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/b569ab4d-4db4-424f-a519-a077b539bde9.png" width="250" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/473e9caa-20fb-43f2-ac00-a0d1983764cd.png" width="250" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/6e0f3412-494b-4975-aa78-95c52434e24f.png" width="250" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/9eef71c8-f174-4262-8843-aaac7663360f.png" width="250" height="400"/>|<img src="https://github.com/y636367/HuntHunt/assets/63005842/7fe84d85-8b24-4ed1-b551-17319b452001.png" width="250" height="400"/>|
+|<img src="https://github.com/user-attachments/assets/6bf03e03-8f9a-4d2d-9546-c13866ea1a4d" width="250" height="400"/>|<img src="https://github.com/user-attachments/assets/fbe27d33-07cc-43b0-b7e8-22508b3c9d54" width="250" height="400"/>|<img src="https://github.com/user-attachments/assets/35bb14fc-2aa0-4501-aab6-0e473afae74d" width="250" height="400"/>|<img src="https://github.com/user-attachments/assets/39bb6e90-c98f-4f62-af4f-6031eb2bc4f0" width="250" height="400"/>|<img src="https://github.com/user-attachments/assets/f97db332-2bd6-445d-a58c-cd9f75e12d04" width="250" height="400"/>|<img src="https://github.com/user-attachments/assets/a604789f-91e4-4e28-8c5e-40bb623560d3" width="250" height="400"/>|
 |---|---|---|---|---|---|
 |<div align=center>고스트</div>|<div align=center>풍뎅이</div>|<div align=center>스컬 킹</div>|<div align=center>머쉬 킹</div>|<div align=center>등푸른 거북이</div>|<div align=center>레드 슬라임</div>|
 
