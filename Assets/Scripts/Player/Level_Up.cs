@@ -317,10 +317,7 @@ public class Level_Up : MonoBehaviour
         for (int index = 0; index < ran.Length; index++)
         {
             if (!ran[index].Activate_Check)
-            {
-                return_value = false;
-                break;
-            }
+                return false;
 
             if (index == ran.Length - 1)
                 return_value = true;
@@ -335,66 +332,22 @@ public class Level_Up : MonoBehaviour
     /// <returns></returns>
     private Item_Control[] Random_Setting(Item_Control[] ran)
     {
-        while (true)
+        HashSet<Item_Control> selectedItems= new HashSet<Item_Control>();                                                                           // 중복 방지를 위한 HashSet
+
+        for (int i = 0; i < ran.Length; i++)
         {
             while (true)
             {
-                Item_Control ranitem;
                 ItemType type_data = SpinGacha();
+                Item_Control ranitem = Spin_Result(type_data);
 
-                ranitem = Spin_Result(type_data);
-
-                if (ranitem.level == ranitem.data.damages.Length)
+                if (ranitem.level < ranitem.data.damages.Length && !selectedItems.Contains(ranitem))
                 {
-                    type_data = SpinGacha();
-                    ranitem = Spin_Result(type_data);
-                }
-                else
-                {
-                    ran[0] = ranitem;
+                    ran[i] = ranitem;
+                    selectedItems.Add(ranitem);
                     break;
                 }
             }
-            while (true)
-            {
-                Item_Control ranitem;
-                ItemType type_data = SpinGacha();
-
-                ranitem = Spin_Result(type_data);
-
-                if (ranitem.level == ranitem.data.damages.Length || ran[0]==ranitem)
-                {
-                    type_data = SpinGacha();
-                    ranitem = Spin_Result(type_data);
-                }
-                else
-                {
-                    ran[1] = ranitem;
-                    break;
-                }
-            }
-            while (true)
-            {
-                Item_Control ranitem;
-                ItemType type_data = SpinGacha();
-
-                ranitem = Spin_Result(type_data);
-
-                if (ranitem.level == ranitem.data.damages.Length || ran[0] == ranitem || ran[1] == ranitem)
-                {
-                    type_data = SpinGacha();
-                    ranitem = Spin_Result(type_data);
-                }
-                else
-                {
-                    ran[2] = ranitem;
-                    break;
-                }
-            }
-
-            if ((ran[0] != ran[1] && ran[0] != ran[2] && ran[1] != ran[2]) || 
-                ((ran[0] == ran[1] && ran[0] == coin) && (ran[0] == ran[2] && ran[2] == coin) && (ran[1] == ran[2] && ran[1] == coin)))                                         // 중복 여부 확인 함수
-                break;       
         }
         return ran;
     }

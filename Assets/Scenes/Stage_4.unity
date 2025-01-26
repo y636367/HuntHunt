@@ -6966,7 +6966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2076764787355897689, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 2076764787355897689, guid: f845956d721d06b4ab9102a87313d8d9, type: 3}
       propertyPath: m_ImplicitTensor

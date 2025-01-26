@@ -302,8 +302,6 @@ public class Player : MonoBehaviour
         GameManager.Instance.weaponManager.Off_the_Weapons();
         GameManager.Instance.charManager.Off_the_Characteristic();
         Magnet_Collider.SetActive(false);
-
-
     }
     /// <summary>
     /// Item (Bomb, Magnet, Heal) 획득 시 Player 캐릭터 상체 모션 함수
@@ -313,7 +311,7 @@ public class Player : MonoBehaviour
         state = State.Attack;
     }
     /// <summary>
-    /// 부활 후 개임 재게를 위한 설정 함수
+    /// 부활 후 개임 재개를 위한 설정 함수
     /// </summary>
     private void Resurrection_On_Player()
     {

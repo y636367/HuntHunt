@@ -32,7 +32,7 @@ public class StageManager : MonoBehaviour
     /// 스코어 종합
     /// Result = Game 진행 시간(생존 시간) * n(난이도에 따른 값)
     /// Result += 잡은 몬스터 수  * k(난이도에 따른 값)
-    /// Result += 스테이지에와 난이도에 따른 가중치
+    /// Result += 스테이지와 난이도에 따른 가중치
     /// </summary>
     /// <returns></returns>
     public float Result_Score()

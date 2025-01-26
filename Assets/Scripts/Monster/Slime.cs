@@ -6,7 +6,7 @@ public class Slime : MonoBehaviour
 {
     #region Variable
     [SerializeField]
-    private Slime_Face faces;                                                   // Idle, Hit, Dead ì–¼êµ´ í‘œí˜„ ë¨¸í‹°ë¦¬ì–¼
+    private Slime_Face faces;                                                   // Idle, Hit, Dead ¾ó±¼ Ç¥Çö ¸ÓÆ¼¸®¾ó
 
     Animator animator;
     Rigidbody rb;
@@ -27,7 +27,7 @@ public class Slime : MonoBehaviour
     [SerializeField]
     private GameObject SlimeBody;
 
-    [Header("ìŠ¤í…Œì´í„°ìŠ¤")]
+    [Header("½ºÅ×ÀÌÅÍ½º")]
     [SerializeField]
     private float Physical_strength;
     [SerializeField]
@@ -64,8 +64,8 @@ public class Slime : MonoBehaviour
     private SkinnedMeshRenderer[] Skin;
     [SerializeField]
     private Color[] Existing;
-#endregion
-    #region ì‚¬ìš´ë“œ
+    #endregion
+    #region »ç¿îµå
     [Header("Damage_Sounds")]
     [SerializeField]
     private string Damage_s;
@@ -83,12 +83,12 @@ public class Slime : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
-        faceMaterial= SlimeBody.GetComponent<Renderer>().materials[1];
-        wait=new WaitForFixedUpdate();
+        faceMaterial = SlimeBody.GetComponent<Renderer>().materials[1];
+        wait = new WaitForFixedUpdate();
 
         Existing = new Color[Skin.Length];
 
-        for (int index = 0; index < Skin.Length; index++)                                                   // í”¼ê²© í›„ ì›ë˜ ìƒíƒœë¡œ ëŒì•„ê°€ê¸° ìœ„í•œ ì›ë˜ SkinRenderer ì €ì¥
+        for (int index = 0; index < Skin.Length; index++)                                                   // ÇÇ°İ ÈÄ ¿ø·¡ »óÅÂ·Î µ¹¾Æ°¡±â À§ÇÑ ¿ø·¡ SkinRenderer ÀúÀå
         {
             Existing[index] = Skin[index].material.color;
         }
@@ -97,7 +97,7 @@ public class Slime : MonoBehaviour
     }
     private void Update()
     {
-        if (!GameManager.Instance.Start_ || GameManager.Instance.Player_Dead)                                   // ê²Œì„ ì¢…ë£Œ, ì¼ì‹œì •ì§€, ì‚¬ë§
+        if (!GameManager.Instance.Start_ || GameManager.Instance.Player_Dead)                                   // °ÔÀÓ Á¾·á, ÀÏ½ÃÁ¤Áö, »ç¸Á
         {
             Stop_Animation();
             return;
@@ -109,18 +109,18 @@ public class Slime : MonoBehaviour
         Move();
     }
     /// <summary>
-    /// Player ì—ê²Œë¡œ ì´ë™
+    /// Player ¿¡°Ô·Î ÀÌµ¿
     /// </summary>
     private void Move()
     {
         if (run)
         {
-            agent.speed = speed;                                                                    // ì†ë ¥ ì„¤ì •
-            agent.SetDestination(Player.position);                                                  // ëª©ì ì§€ ì„¤ì •
+            agent.speed = speed;                                                                    // ¼Ó·Â ¼³Á¤
+            agent.SetDestination(Player.position);                                                  // ¸ñÀûÁö ¼³Á¤
         }
     }
     /// <summary>
-    /// Spawn í›„ ìƒíƒœ ë³€í™˜(ì• ë‹ˆë©”ì´ì…˜ ì´ë²¤íŠ¸ í•¨ìˆ˜)
+    /// Spawn ÈÄ »óÅÂ º¯È¯(¾Ö´Ï¸ŞÀÌ¼Ç ÀÌº¥Æ® ÇÔ¼ö)
     /// </summary>
     private void Birth()
     {
@@ -129,18 +129,18 @@ public class Slime : MonoBehaviour
         animator.SetTrigger("Move");
     }
     /// <summary>
-    /// í˜¹ì‹œë‚˜ ì˜¤ë¸Œì íŠ¸ê°€ íŠ€ëŠ” ê²ƒì„ ë°©ì§€í•˜ì—¬ ì´ˆê¸°í™”
+    /// È¤½Ã³ª ¿ÀºêÁ§Æ®°¡ Æ¢´Â °ÍÀ» ¹æÁöÇÏ¿© ÃÊ±âÈ­
     /// </summary>
     private void FreezeRotation()
     {
         if (run)
         {
-            rb.velocity = Vector3.zero;                                                         // ì†ë ¥ ë° ê°ë„ ì´ˆê¸°í™”
+            rb.velocity = Vector3.zero;                                                         // ¼Ó·Â ¹× °¢µµ ÃÊ±âÈ­
             rb.angularVelocity = Vector3.zero;
         }
     }
     /// <summary>
-    /// Spawnì‹œ ì´í™íŠ¸ ìƒì„± í•¨ìˆ˜(ì• ë‹ˆë©”ì´ì…˜ ì´ë²¤íŠ¸ ì²˜ë¦¬)
+    /// Spawn½Ã ÀÌÆåÆ® »ı¼º ÇÔ¼ö(¾Ö´Ï¸ŞÀÌ¼Ç ÀÌº¥Æ® Ã³¸®)
     /// </summary>
     private void Spawn_Effect()
     {
@@ -149,7 +149,7 @@ public class Slime : MonoBehaviour
         effect.transform.position = this.transform.position;
     }
     /// <summary>
-    /// Dead ì‹œ ì´í™íŠ¸ ìƒì„± í•¨ìˆ˜(ì• ë‹ˆë©”ì´ì…˜ ì´ë²¤íŠ¸ ì²˜ë¦¬)
+    /// Dead ½Ã ÀÌÆåÆ® »ı¼º ÇÔ¼ö(¾Ö´Ï¸ŞÀÌ¼Ç ÀÌº¥Æ® Ã³¸®)
     /// </summary>
     private void Death_Effect()
     {
@@ -158,14 +158,14 @@ public class Slime : MonoBehaviour
         effect.transform.position = this.transform.position;
     }
     /// <summary>
-    /// ì˜¤ë¸Œì íŠ¸ í’€ë§ì„ ìœ„í•´ ActvieFalse(ì• ë‹ˆë©”ì´ì…˜ ì´ë²¤íŠ¸ ì²˜ë¦¬)
+    /// ¿ÀºêÁ§Æ® Ç®¸µÀ» À§ÇØ ActvieFalse(¾Ö´Ï¸ŞÀÌ¼Ç ÀÌº¥Æ® Ã³¸®)
     /// </summary>
     private void Death()
     {
         gameObject.SetActive(false);
     }
     /// <summary>
-    /// Face Matirial ì„¤ì •
+    /// Face Matirial ¼³Á¤
     /// </summary>
     /// <param name="tex"></param>
     private void SetFace(Texture tex)
@@ -173,7 +173,7 @@ public class Slime : MonoBehaviour
         faceMaterial.SetTexture("_MainTex", tex);
     }
     /// <summary>
-    /// í™œì„±í™”ì‹œ í˜„ì¬ ê²Œì„ ìƒíƒœì— ë”°ë¥¸ Status ë° ìƒíƒœ ì´ˆê¸°í™”
+    /// È°¼ºÈ­½Ã ÇöÀç °ÔÀÓ »óÅÂ¿¡ µû¸¥ Status ¹× »óÅÂ ÃÊ±âÈ­
     /// </summary>
     private void OnEnable()
     {
@@ -190,7 +190,7 @@ public class Slime : MonoBehaviour
         }
     }
     /// <summary>
-    /// ì´ˆê¸°í™”
+    /// ÃÊ±âÈ­
     /// </summary>
     /// <param name="t_data"></param>
     public void Init(SpawnData t_data)
@@ -200,7 +200,7 @@ public class Slime : MonoBehaviour
         Defensive_power = t_data.Defensive;
         Attack_power = t_data.Attack;
 
-        MaxHealth = GameManager.Instance.spawnData.Stage_Multiple(MaxHealth);                                                   // Stageì— ë”°ë¥¸ ëŠ¥ë ¥ì¹˜ ê³±
+        MaxHealth = GameManager.Instance.spawnData.Stage_Multiple(MaxHealth);                                                   // Stage¿¡ µû¸¥ ´É·ÂÄ¡ °ö
         Defensive_power = GameManager.Instance.spawnData.Stage_Multiple(Defensive_power);
         Attack_power = GameManager.Instance.spawnData.Stage_Multiple(Attack_power);
 
@@ -216,54 +216,48 @@ public class Slime : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Shield"))                                                                                             // Shieldì— ë‹¿ì•˜ì„ì‹œ
+        if (other.CompareTag("Shield"))                                                                                             // Shield¿¡ ´ê¾ÒÀ»½Ã
         {
             s_speed = speed - other.GetComponent<Bullet>().additional;
 
-            this.Slow = true;                                                                                                       // Slow ë””ë²„í”„
+            this.Slow = true;                                                                                                       // Slow µğ¹öÇÁ
             speed = s_speed;
         }
-        else if (other.CompareTag("Bullet"))                                                                                        // Bulletì— ë‹¿ì•˜ì„ì‹œ
+        else if (other.CompareTag("Bullet"))                                                                                        // Bullet¿¡ ´ê¾ÒÀ»½Ã
         {
             try
             {
-                Physical_strength -= other.GetComponent<Bullet>().Damage * (1 / (1 + Defensive_power));                             // Bullet íƒ€ì… í”¼ê²©
+                Physical_strength -= other.GetComponent<Bullet>().Damage * (1 / (1 + Defensive_power));                             // Bullet Å¸ÀÔ ÇÇ°İ
                 Hit_Damage();
             }
             catch (NullReferenceException) { }
             try
             {
-                Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));                               // Bomb íƒ€ì… í”¼ê²©
+                Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));                               // Bomb Å¸ÀÔ ÇÇ°İ
                 StartCoroutine(OnDamage());
             }
             catch (NullReferenceException) { }
         }
 
-        if (Physical_strength > 0)
-        {
-
-        }
-        else
-        {
-            Death_state();                                                                                                          // ì²´ë ¥ì´ 0 ì´í•˜ë¡œ ë–¨ì–´ì§€ë©´ ì‚¬ë§ ì²˜ë¦¬
-        }
+        if (Physical_strength <= 0)
+            Death_state();                                                                                                          // Ã¼·ÂÀÌ 0 ÀÌÇÏ·Î ¶³¾îÁö¸é »ç¸Á Ã³¸®
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Slower"))                                                                                 // Slowerì— ê³„ì†í•´ì„œ ë‹¿ê³  ìˆëŠ” ê²½ìš°
+        if (other.CompareTag("Slower"))                                                                                 // Slower¿¡ °è¼ÓÇØ¼­ ´ê°í ÀÖ´Â °æ¿ì
         {
             Slower_Timer += Time.deltaTime;
 
-            s_speed = speed - other.GetComponent<Bomb>().Damage;                                                        // ì†ë„ ê°ì†Œ
+            s_speed = speed - other.GetComponent<Bomb>().Damage;                                                        // ¼Óµµ °¨¼Ò
 
             this.Slow = true;
-            speed = s_speed;    
-            Invoke("Debuff_Off", 1.5f);                                                                                 // ë””ë²„í”„ í•´ì œëŠ” ì™„ì „íˆ Exit ë˜ê³  ë‚œ í›„
-            if (Slower_Timer > 0.5f)                                                                                    // ë§¤ í”„ë ˆì„ë§ˆë‹¤ ê°ì†Œ ë°©ì§€
+            speed = s_speed;
+            Invoke("Debuff_Off", 1.5f);                                                                                 // µğ¹öÇÁ ÇØÁ¦´Â ¿ÏÀüÈ÷ Exit µÇ°í ³­ ÈÄ
+            if (Slower_Timer > 0.5f)                                                                                    // ¸Å ÇÁ·¹ÀÓ¸¶´Ù °¨¼Ò ¹æÁö
             {
                 if (Physical_strength > 0)
                 {
-                    Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));               // ë°ë¯¸ì§€ ì¡´ì¬ì‹œ ì²´ë ¥ ê°ì†Œ
+                    Physical_strength -= other.GetComponent<Bomb>().Damage * (1 / (1 + Defensive_power));               // µ¥¹ÌÁö Á¸Àç½Ã Ã¼·Â °¨¼Ò
                     Slower_Timer = 0f;
                 }
                 else
@@ -272,9 +266,9 @@ public class Slime : MonoBehaviour
                 }
             }
         }
-        else if (other.CompareTag("Stun"))                                                                              // Stunì— ê³„ì†í•´ì„œ ë‹¿ê³  ìˆëŠ” ê²½ìš°
+        else if (other.CompareTag("Stun"))                                                                              // Stun¿¡ °è¼ÓÇØ¼­ ´ê°í ÀÖ´Â °æ¿ì
         {
-            s_speed = 0f;                                                                                               // ì†ë„ ì´ˆê¸°í™”
+            s_speed = 0f;                                                                                               // ¼Óµµ ÃÊ±âÈ­
 
             this.Stun = true;
             speed = s_speed;
@@ -282,13 +276,13 @@ public class Slime : MonoBehaviour
             SetFace(faces.DeathFace);
             animator.speed = 0f;
 
-            Invoke("Debuff_Off", 1.5f);                                                                                 // ë””ë²„í”„ í•´ì œëŠ” ì™„ì „íˆ Exit ë˜ê³  ë‚œ í›„
+            Invoke("Debuff_Off", 1.5f);                                                                                 // µğ¹öÇÁ ÇØÁ¦´Â ¿ÏÀüÈ÷ Exit µÇ°í ³­ ÈÄ
         }
-        else if (other.CompareTag("Shield"))                                                                            // Shieldì— ê³„ì†í•´ì„œ ë‹¿ê³  ìˆëŠ” ê²½ìš°
+        else if (other.CompareTag("Shield"))                                                                            // Shield¿¡ °è¼ÓÇØ¼­ ´ê°í ÀÖ´Â °æ¿ì
         {
             Shield_Timer += Time.deltaTime;
 
-            if (Shield_Timer > 0.5f)                                                                                    // ë§¤ í”„ë ˆì„ ë§ˆë‹¤ ê°ì†Œ ë°©ì§€
+            if (Shield_Timer > 0.5f)                                                                                    // ¸Å ÇÁ·¹ÀÓ ¸¶´Ù °¨¼Ò ¹æÁö
             {
                 if (Physical_strength > 0)
                 {
@@ -309,7 +303,7 @@ public class Slime : MonoBehaviour
             Debuff_Off();
     }
     /// <summary>
-    /// í™”ì—¼ ë°©ì‚¬ê¸°, í­ë°œí˜• ì´í™íŠ¸, ì‹ í˜¸íƒ„ ë“± ë°ë¯¸ì§€
+    /// È­¿° ¹æ»ç±â, Æø¹ßÇü ÀÌÆåÆ®, ½ÅÈ£Åº µî µ¥¹ÌÁö
     /// </summary>
     /// <param name="other"></param>
     private void OnParticleCollision(GameObject other)
@@ -331,14 +325,8 @@ public class Slime : MonoBehaviour
         catch (NullReferenceException) { }
 
 
-        if (Physical_strength > 0)
-        {
-
-        }
-        else
-        {
+        if (Physical_strength <= 0)
             Death_state();
-        }
     }
     private void OnCollisionStay(Collision collision)
     {
@@ -347,12 +335,13 @@ public class Slime : MonoBehaviour
             if (GameManager.Instance.player.Hit)
             {
                 return;
-            }else
+            }
+            else
                 Hit_Player();
         }
     }
     /// <summary>
-    /// Playerì— ì ‘ì´‰í•˜ê²Œ ë ì‹œ Player í”¼ê²©
+    /// Player¿¡ Á¢ÃËÇÏ°Ô µÉ½Ã Player ÇÇ°İ
     /// </summary>
     private void Hit_Player()
     {
@@ -360,7 +349,7 @@ public class Slime : MonoBehaviour
         UIManager.instance.HealthBar.Update_HUD();
     }
     /// <summary>
-    /// ë””ë²„í”„ í•´ì œ
+    /// µğ¹öÇÁ ÇØÁ¦
     /// </summary>
     private void Debuff_Off()
     {
@@ -378,7 +367,7 @@ public class Slime : MonoBehaviour
         }
     }
     /// <summary>
-    /// ì‚¬ë§ ìƒíƒœ ì „í™˜ ë° ëŠ¥ë ¥ì¹˜ ìˆ˜ì •
+    /// »ç¸Á »óÅÂ ÀüÈ¯ ¹× ´É·ÂÄ¡ ¼öÁ¤
     /// </summary>
     public void Death_state()
     {
@@ -400,19 +389,19 @@ public class Slime : MonoBehaviour
             Skin[index].material.color = Existing[index];
         }
 
-        if (!Boss_Skill)                                                                                                    // Boss ìŠ¤í‚¬ë¡œ ìƒì„±ëœ ëª¬ìŠ¤í„°ê°€ ì•„ë‹ˆë¼ë©´
+        if (!Boss_Skill)                                                                                                    // Boss ½ºÅ³·Î »ı¼ºµÈ ¸ó½ºÅÍ°¡ ¾Æ´Ï¶ó¸é
         {
             GameManager.Instance.pool.EnemyCount--;
             GameManager.Instance.current_Kill += 1;
             UIManager.instance.Kill.Update_HUD();                                                                           // Kill HUD Update
-            GameManager.Instance.drop.Category(0, -1, this.transform);                                                      // ì½”ì¸ ìƒì„±
-            GameManager.Instance.drop.Category(1, monster_num, this.transform);                                             // ê²½í—˜ì¹˜ ìƒì„±
-            GameManager.Instance.drop.Category(4, -1, this.transform);                                                      // ì•„ì´í…œ ìƒì„±
+            GameManager.Instance.drop.Category(0, -1, this.transform);                                                      // ÄÚÀÎ »ı¼º
+            GameManager.Instance.drop.Category(1, monster_num, this.transform);                                             // °æÇèÄ¡ »ı¼º
+            GameManager.Instance.drop.Category(4, -1, this.transform);                                                      // ¾ÆÀÌÅÛ »ı¼º
         }
         SetFace(faces.DeathFace);
     }
     /// <summary>
-    /// í”¼ê²© ì²˜ë¦¬
+    /// ÇÇ°İ Ã³¸®
     /// </summary>
     private void Hit_Damage()
     {
@@ -420,7 +409,7 @@ public class Slime : MonoBehaviour
         StartCoroutine(Knockback());
     }
     /// <summary>
-    /// í”¼ê²© íš¨ê³¼ ì¬ìƒì„ ìœ„í•œ Skin ìƒ‰ìƒ ë³€ê²½
+    /// ÇÇ°İ È¿°ú Àç»ıÀ» À§ÇÑ Skin »ö»ó º¯°æ
     /// </summary>
     /// <returns></returns>
     private IEnumerator OnDamage()
@@ -442,23 +431,23 @@ public class Slime : MonoBehaviour
         }
     }
     /// <summary>
-    /// í”¼ê²© ì‹œ ë°€ë ¤ë‚¨ ì‹¤í–‰
+    /// ÇÇ°İ ½Ã ¹Ğ·Á³² ½ÇÇà
     /// </summary>
     /// <returns></returns>
     private IEnumerator Knockback()
     {
-        agent.enabled= false;
-        yield return wait;                                                                                  // ë‹¤ìŒ í•˜ë‚˜ì˜ ë¬¼ë¦¬ í”„ë ˆì„ ë”œë ˆì´
-                                                                                                            //yield return new WaitForSeconds(2f) //ìµœì í™”ì— ì¢‹ì§€ ì•Šê¸°ì— ë˜ë„ë¡ ë”°ë¡œ ë³€ìˆ˜ ìƒì„±í•´ì„œ ì‚¬ìš©í•  ê²ƒ
+        agent.enabled = false;
+        yield return wait;                                                                                  // ´ÙÀ½ ÇÏ³ªÀÇ ¹°¸® ÇÁ·¹ÀÓ µô·¹ÀÌ
+                                                                                                            //yield return new WaitForSeconds(2f) //ÃÖÀûÈ­¿¡ ÁÁÁö ¾Ê±â¿¡ µÇµµ·Ï µû·Î º¯¼ö »ı¼ºÇØ¼­ »ç¿ëÇÒ °Í
 
         Vector3 playerPos = GameManager.Instance.player.transform.position;
         Vector3 dirVec = transform.position - playerPos;
 
-        rb.AddForce(dirVec.normalized * 10, ForceMode.Impulse);                                             //ìˆœê°„ì ì¸ í˜ì´ê¸°ì— Impulse
+        rb.AddForce(dirVec.normalized * 10, ForceMode.Impulse);                                             //¼ø°£ÀûÀÎ ÈûÀÌ±â¿¡ Impulse
         agent.enabled = true;
     }
     /// <summary>
-    /// ì• ë‹ˆë©”ì´ì…˜ ì •ì§€ ë° ì œìë¦¬ì—ì„œ ì •ì§€
+    /// ¾Ö´Ï¸ŞÀÌ¼Ç Á¤Áö ¹× Á¦ÀÚ¸®¿¡¼­ Á¤Áö
     /// </summary>
     private void Stop_Animation()
     {
@@ -468,7 +457,7 @@ public class Slime : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezePosition;
     }
     /// <summary>
-    /// ì• ë‹ˆë©”ì´ì…˜ ì¬ê²Œ ë° ì œìë¦¬ ì •ì§€ í•´ì œ
+    /// ¾Ö´Ï¸ŞÀÌ¼Ç Àç°Ô ¹× Á¦ÀÚ¸® Á¤Áö ÇØÁ¦
     /// </summary>
     public void Resume_Animation()
     {
