@@ -3,7 +3,7 @@
 <h1>HuntHunt 🔫</h1>
 모바일로 플레이 할 수 있는 뱀서라이크<br>
 플레이어를 해하기 위해 몬스터들이 달려든다. 이대로 당하고만 있을수는 없다! 무기를 들어라! <br> 몬스터들을 무찌르기 위해 무기를 해금하고 캐릭터와 무기를 강화하여 달려드는 몬스터들을 무찌르자!😡<br>
-apk link : https://drive.google.com/file/d/1P6OlReQEf70RX6uOcD4GpnShLfpWdD0l/view?usp=sharing
+apk link : https://drive.google.com/file/d/1kNtFwgLYYHLHQ7dR6ghagj1f5NIm8DYE/view?usp=sharing
 </div>
 
 ## 목차
