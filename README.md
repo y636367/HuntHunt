@@ -4,6 +4,10 @@
 모바일로 플레이 할 수 있는 뱀서라이크<br>
 플레이어를 해하기 위해 몬스터들이 달려든다. 이대로 당하고만 있을수는 없다! 무기를 들어라! <br>
 무기를 해금하고 강화하여 달려드는 몬스터들을 무찌르자!😡<br>
+
+<br>
+<img src="https://github.com/user-attachments/assets/d96acd52-c894-4a47-9e4c-b3e650ec31f8">
+
 </div>
 
 ## :calendar: 목차
