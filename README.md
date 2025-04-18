@@ -23,7 +23,8 @@ OnParticle~ 과 같은 함수들의 기능 사용을 학습하기 위해 한때 
  
  - 개발 엔진 및 사용언어: <img src="https://img.shields.io/badge/unity-000000?style=for-the-badge&logo=unity&logoColor=white"> / <img src="https://img.shields.io/badge/-C%23-512BD4?style=for-the-badge&logo=csharp&logoColor=white">
  - 사용 서버: 뒤끝(https://www.thebackend.io/)
-
+ - :file_folder: [프로젝트 설명 PPT 다운로드](https://drive.google.com/uc?export=download&id=1RPtR8uUGa8GHim1wIAydF3OPEDmc-g-X)
+   
 ## :movie_camera: 플레이 영상
 [▶ 영상 보기](https://github.com/user-attachments/assets/67cfc27e-9864-48dc-8057-47c3bf2f7e92)
 
